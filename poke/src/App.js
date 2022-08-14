@@ -1,7 +1,10 @@
 import './App.css';
 
-function App() {
-  return (
+
+function App() { 
+    
+
+  if(pokemon)return (
     <div className="App">
       
     </div>
