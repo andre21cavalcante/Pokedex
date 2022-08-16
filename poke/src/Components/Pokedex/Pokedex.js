@@ -12,8 +12,20 @@ const Pokedex = () => {
         spritesfront_default: '',
         typestypename: '',
         stats: []
-        
+
     })
+
+    useEffect(() => {
+        async function pokemonLista() {
+            try{
+                const response = await Api.get("pokemon/?offset=0&limit=807")
+                setPokemon(response.data.results)
+            }catch(e){
+                console.log(e.error)
+            }
+        }
+        pokemonLista()
+    },[])
 
 
   return (
